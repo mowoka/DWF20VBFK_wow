@@ -1,0 +1,28 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 430px;
+  margin-top: 80px;
+  margin-left: 500px;
+  padding: 50px;
+}
+.login-container .login-title {
+  text-align: left;
+  padding: 10px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.login-container .login-end {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 16px;
+}
+.login-container .login-end span {
+  font-weight: bold;
+  cursor: pointer;
+}
+.login-container .login-end span a {
+  text-decoration: none;
+}

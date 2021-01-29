@@ -1,0 +1,8 @@
+.read--book-container {
+  margin-left: 60px;
+  margin-top: 50px;
+}
+.read-title {
+  display: flex;
+  flex-direction: column;
+}

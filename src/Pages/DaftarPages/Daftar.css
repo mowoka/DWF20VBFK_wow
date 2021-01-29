@@ -1,0 +1,29 @@
+.daftar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 430px;
+  margin-top: 40px;
+  margin-left: 500px;
+  padding: 50px;
+}
+.daftar-container .daftar-title {
+  text-align: left;
+  float: left;
+  padding: 10px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.daftar-container .daftar-end {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 16px;
+}
+.daftar-container .daftar-end span {
+  font-weight: bold;
+  cursor: pointer;
+}
+.daftar-container .daftar-end span a {
+  text-decoration: none;
+}
