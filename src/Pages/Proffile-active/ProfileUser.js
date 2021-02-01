@@ -51,7 +51,9 @@ const ProfileUser = ({ UserBookList, handleDetailBook }) => {
         </div>
         <div className="user--descriptionn-image">
           <img src="image/beranda/egi.png" alt="foto-profile" />
-          <button className="btn btn-danger">Edit Profile</button>
+          <div className="user--description-button">
+            <p>Edit profile</p>
+          </div>
         </div>
       </div>
       <div className="profile--description-books">

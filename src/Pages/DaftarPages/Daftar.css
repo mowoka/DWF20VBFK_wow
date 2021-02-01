@@ -1,29 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+
 .daftar-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 430px;
-  margin-top: 40px;
-  margin-left: 500px;
-  padding: 50px;
+  padding-top: 20px;
+  margin-left: 55px;
+  margin-right: 33px;
+  width: 425px;
+  height: 479px;
 }
-.daftar-container .daftar-title {
-  text-align: left;
-  float: left;
-  padding: 10px;
-  font-size: 30px;
-  font-weight: bold;
+.daftar-container p {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 36px;
 }
-.daftar-container .daftar-end {
-  margin-top: 8px;
+.form--container {
+  width: 350px;
+  height: 50px;
+}
+.form--container .form-btn {
+  width: 350px;
+  height: 50px;
+  font-size: 18px;
   text-align: center;
-  font-size: 16px;
+  background-color: #d60000;
+  color: #fff;
 }
-.daftar-container .daftar-end span {
+.form-btn:hover {
+  background-color: #d60000;
+}
+.daftar-container .end-text {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+}
+.daftar-container .end-text span {
   font-weight: bold;
   cursor: pointer;
-}
-.daftar-container .daftar-end span a {
-  text-decoration: none;
 }

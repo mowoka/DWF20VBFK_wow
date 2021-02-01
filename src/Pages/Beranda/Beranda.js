@@ -7,7 +7,9 @@ import ProfileUser from "../Proffile-active/ProfileUser";
 import DetailBook from "../DetailBook/DetailBook";
 
 const Beranda = () => {
-  const [showPopup, setShowPopup] = useState(false);
+  const [showPopupSubscribe, setShowPopupSubscribe] = useState(false);
+  const [showPopupLogin, setShowPopupLogin] = useState(false);
+
   const [linkRender, setLinkRender] = useState({
     beranda: true,
     subscribe: false,
@@ -15,15 +17,8 @@ const Beranda = () => {
     detailBook: false,
   });
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPopup(false);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, [showPopup]);
-
   const username = "Edi Ganteng";
-  const subscribe = true;
+  const subscribe = false;
 
   const UserBookList = [
     {
@@ -137,19 +132,25 @@ const Beranda = () => {
   };
 
   const handleShowPopup = () => {
-    setShowPopup(true);
     setLinkRender({
       beranda: true,
       subscribe: false,
       profile: false,
       detailBook: false,
     });
+    handleShowPopupContent();
   };
+
+  const handleClosePopupConntent = () => setShowPopupSubscribe(false);
+  const handleShowPopupContent = () => setShowPopupSubscribe(true);
+  const handleClosePopupConntentLogin = () => setShowPopupLogin(false);
+  const handleShowPopupContentLogin = () => setShowPopupLogin(true);
 
   return (
     <div className="beranda-container">
       <div className="beranda--container-profile">
         <Profile
+          handleShowPopupContentLogin={handleShowPopupContentLogin}
           linkRender={linkRender}
           handleBeranda={handleBeranda}
           handleSubsciber={handleSubsciber}
@@ -170,7 +171,10 @@ const Beranda = () => {
           <DetailBook />
         ) : (
           <ComponentBeranda
-            showPopup={showPopup}
+            showPopupLogin={showPopupLogin}
+            handleClosePopupConntentLogin={handleClosePopupConntentLogin}
+            showPopupSubscribe={showPopupSubscribe}
+            handleClosePopupConntent={handleClosePopupConntent}
             subscribe={subscribe}
             Books={Books}
             handleDetailBook={handleDetailBook}

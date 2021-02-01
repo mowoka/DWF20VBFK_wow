@@ -11,12 +11,21 @@ const Profile = ({
   handleProfileUser,
   username,
   subscribe,
+  handleShowPopupContentLogin,
 }) => {
   return (
     <div className="profile-container">
       <div className="profile--content-user">
-        <img onClick={handleBeranda} src="image/beranda/wow.png" alt="wow" />
-        <img onClick={handleBeranda} src="image/beranda/wow_2.png" alt="wow" />
+        <div
+          onClick={handleShowPopupContentLogin}
+          className="profile--content-logo"
+        >
+          <img
+            onClick={handleBeranda}
+            src="image/beranda/wow-icon.png"
+            alt="wow"
+          />
+        </div>
         <img src="image/beranda/user.png" alt="user" />
         <h2>{username}</h2>
         <p className={subscribe ? "text-success" : "text-danger"}>
@@ -45,9 +54,10 @@ const Profile = ({
             className={linkRender.subscribe ? "text-danger" : null}
             onClick={handleSubsciber}
           >
-            Subscibe
+            Subscribe
           </Link>
         </div>
+
         <div className="profile-icon">
           <ExitToAppOutlinedIcon style={{ fontSize: "30px" }} />
           <Link to="/">Logout</Link>

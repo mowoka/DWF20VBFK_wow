@@ -1,37 +1,22 @@
 import React, { useState } from "react";
 import "./ReadBook.css";
-import { Document, Page, pdfjs } from "react-pdf";
+import { ReactReader, EpubView } from "react-reader";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 const ReadBook = () => {
-  const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
-
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
-  }
-
   return (
     <div className="read--book-container">
       <div className="read-title">
-        <img
-          style={{ height: "50px", width: "65px" }}
-          src="image/beranda/wow.png"
-          alt="wow"
-        />
-        <img
-          style={{ height: "50px", width: "100px", marginTop: "-30px" }}
-          src="image/beranda/wow_2.png"
-          alt="wow2"
-        />
+        <img src="image/beranda/wow-icon.png" alt="wow" />
       </div>
       <div className="read-book">
-        <Document file="somefile.pdf" onLoadSuccess={onDocumentLoadSuccess}>
-          <Page pageNumber={pageNumber} />
-        </Document>
-        <p>
-          Page {pageNumber} of {numPages}
-        </p>
+        <div style={{ position: "relative", height: "100%" }}>
+          <ReactReader
+            url={"file/alice.epub"}
+            title={"Alice in wonderland"}
+            // location={"epubcfi(/6/2[cover]!/6)"}
+            // locationChanged={(epubcifi) => console.log(epubcifi)}
+          />
+        </div>
       </div>
     </div>
   );

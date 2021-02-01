@@ -1,28 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
 .login-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 430px;
-  margin-top: 80px;
-  margin-left: 500px;
-  padding: 50px;
+  padding-top: 20px;
+  margin-left: 55px;
+  margin-right: 33px;
+  width: 425px;
+  height: 408px;
 }
-.login-container .login-title {
-  text-align: left;
-  padding: 10px;
-  font-size: 30px;
-  font-weight: bold;
+.login-container p {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 36px;
 }
-.login-container .login-end {
-  margin-top: 8px;
+.form--container {
+  width: 350px;
+  height: 50px;
+}
+.form--container .form-btn {
+  width: 350px;
+  height: 50px;
+  font-size: 18px;
   text-align: center;
-  font-size: 16px;
+  background-color: #d60000;
+  color: #fff;
 }
-.login-container .login-end span {
+.form-btn:hover {
+  background-color: #d60000;
+}
+.login-container .end-text {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+}
+.login-container .end-text span {
   font-weight: bold;
   cursor: pointer;
-}
-.login-container .login-end span a {
-  text-decoration: none;
 }

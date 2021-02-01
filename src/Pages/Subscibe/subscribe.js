@@ -2,7 +2,6 @@ import React from "react";
 import "./subcribe.css";
 import Profile from "../../Components/Profile";
 import { Form } from "react-bootstrap";
-import AttachmentIcon from "@material-ui/icons/Attachment";
 
 const subscribe = ({ handleShowPopup }) => {
   const username = "Edi Ganteng";
@@ -29,21 +28,22 @@ const subscribe = ({ handleShowPopup }) => {
           <form action="">
             <Form.Group controlId="formGroupEmail">
               <Form.Control
+                style={{ width: "350px", height: "50px" }}
                 type="text"
                 placeholder="Input your account number"
               />
             </Form.Group>
             <input type="file" id="actual-btn" hidden />
             <label for="actual-btn" className="form-file">
-              Attact proof of transfer
-              <AttachmentIcon />
+              <p>Attact proof of transfer</p>
+              <img src="image/beranda/attact-icon.png" alt="attac-icon" />
             </label>
-            <button
+            <input
               onClick={handleShowPopup}
               className="btn btn-danger btn-sumbit"
-            >
-              Send
-            </button>
+              type="submit"
+              value="Send"
+            />
           </form>
         </div>
       </div>

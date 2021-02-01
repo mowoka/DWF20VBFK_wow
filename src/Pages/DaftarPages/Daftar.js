@@ -3,31 +3,59 @@ import { Form, Button } from "react-bootstrap";
 import "./Daftar.css";
 import { Link } from "react-router-dom";
 
-function Daftar() {
+function Daftar({ handleLinkDaftar, onChangeRegister, onSubmitDaftar }) {
   return (
     <div className="daftar-container">
-      <p className="daftar-title">Sign Up</p>
-      <Form>
-        <Form.Group controlId="formEmail">
-          <Form.Control type="Email" placeholder="Email" />
-        </Form.Group>
-        <Form.Group controlId="formPassword">
-          <Form.Control type="Password" placeholder="Password" />
-        </Form.Group>
-        <Form.Group controlId="formName">
-          <Form.Control type="Text" placeholder="Full Name" />
-        </Form.Group>
-        <br />
-        <Button type="submit" variant="danger" size="lg">
-          Sign Up
-        </Button>
-      </Form>
-      <p className="daftar-end">
-        Already have an acccount ? Klik{" "}
-        <span>
-          <Link to="/login">Here</Link>
-        </span>
-      </p>
+      <p>Sign Up</p>
+      <div className="form--container">
+        <form onSubmit={onSubmitDaftar}>
+          <input
+            style={{
+              width: "350px",
+              height: "50px",
+            }}
+            type="email"
+            className="form-control"
+            placeholder="Email"
+            name="email"
+            onChange={(e) => onChangeRegister(e)}
+          />
+          <input
+            style={{
+              marginTop: "30px",
+              width: "350px",
+              height: "50px",
+            }}
+            type="password"
+            className="form-control"
+            placeholder="password"
+            name="password"
+            onChange={(e) => onChangeRegister(e)}
+          />
+          <input
+            style={{
+              marginTop: "30px",
+              width: "350px",
+              height: "50px",
+            }}
+            type="text"
+            className="form-control"
+            placeholder="Full Name"
+            name="name"
+            onChange={(e) => onChangeRegister(e)}
+          />
+          <input
+            type="submit"
+            className="btn btn-danger form-btn"
+            value="Sign Up"
+            onClick={handleLinkDaftar}
+          />
+        </form>
+        <p className="end-text">
+          Already have an account ? Klik
+          <span onClick={handleLinkDaftar}> Here</span>
+        </p>
+      </div>
     </div>
   );
 }
